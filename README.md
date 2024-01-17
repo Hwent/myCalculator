@@ -1,8 +1,22 @@
-# React + Vite
+# JS Calculator with React and Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+Welcome to my JavaScript Calculator project! This application is built using React and Vite, demonstrating modern web development practices. It's designed to be a simple, user-friendly, and responsive calculator that can handle basic arithmetic operations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Basic Operations**: Supports addition, subtraction, multiplication, and division.
+- **Responsive Design**: Optimized for both desktop and mobile use.
+- **User-Friendly Interface**: Clean and intuitive UI for ease of use.
+
+## Getting Started
+
+To get started with this project, clone the repository and install the dependencies.
+
+```bash
+git clone https://github.com/Hwent/myCalculator
+cd myCalculator
+npm install
+
+
