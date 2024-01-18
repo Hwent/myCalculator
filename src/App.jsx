@@ -4,6 +4,26 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Result from './CalculatorLogic.jsx'
 
+// MyClearButton component
+function MyTopBar({display,setDisplay}) {
+  return (
+    <div className='top'>
+    <button
+      className='top-buttons'
+      onClick={() => setDisplay('')}
+    >
+      Clear
+    </button>
+    <button
+    className='top-buttons'
+    onClick={() => setDisplay(display.slice(0,display.length-1))}
+  ><i className="fa-solid fa-delete-left"></i>
+  </button>
+  </div>
+  );
+}
+
+
 function MyButtonTable({display,setDisplay}) {
   const buttons = ["7","8","9","/","4","5","6","*","1","2","3","+",".","0","=","-"];
   const createTable = () => {
@@ -52,6 +72,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <Result display={display} setDisplay={setDisplay} />
+        <MyTopBar setDisplay={setDisplay} display={display}/>
         <MyButtonTable setDisplay={setDisplay} display={display}/>
       </div>
       <p className="read-the-docs">

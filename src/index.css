@@ -45,11 +45,18 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  align-items: center; 
-  justify-content: center; 
   width: 100%; 
   aspect-ratio: 1 / 1;
 }
+
+.top-buttons {
+  font-size: 1.2em;
+  font-weight: 400;
+  width: 25%;
+  aspect-ratio: 2 / 1;
+  margin: auto;
+}
+
 button:hover {
   border-color: #646cff;
 }
@@ -72,7 +79,6 @@ button:focus-visible {
 }
 
 #displayOutput {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -94,10 +100,14 @@ input::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: repeat(4, 120px); /* 4 columns */
   grid-gap: 2px; /* spacing between buttons */
-  margin: 1rem auto;
+  margin: 2px auto;
   justify-content: center;
 }
 
 .button-table .table-row {
   display: contents;
+}
+
+.top{
+  display: flex;
 }
