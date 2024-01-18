@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import useCalculatorLogic from './CalculatorLogic.jsx'
+import Result from './CalculatorLogic.jsx'
 
 function MyButtonTable({display,setDisplay}) {
   const buttons = ["7","8","9","/","4","5","6","*","1","2","3","+",".","0","=","-"];
@@ -51,7 +51,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <input id="displayOutput" type="text" value={display} onChange={(e) => setDisplay(e.target.value)} />
+        <Result display={display} setDisplay={setDisplay} />
         <MyButtonTable setDisplay={setDisplay} display={display}/>
       </div>
       <p className="read-the-docs">
