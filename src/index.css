@@ -26,7 +26,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 300px;
   min-height: 100vh;
 }
 
@@ -67,16 +67,23 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #1a1a1a;
+    background-color: #213547;
   }
   a:hover {
-    color: #747bff;
+    color: #4a4d89;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #242424;
+    color: #4a4d89;
   }
 }
+@media (max-width: 600px) {
+  footer {
+      padding: 0.5em;
+  }
+}
+
 
 #displayOutput {
   flex-direction: column;
@@ -86,7 +93,7 @@ button:focus-visible {
   padding: 1.6em;
   text-align: center;
   font-size: large;
-  background-color: #1a1a1a;
+  background-color: #4a4d89;
   border-radius: 8px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
