@@ -1,12 +1,18 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -26,13 +32,14 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 300px;
+  min-width: 200px;
   min-height: 100vh;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 2rem;
 }
 
 button {
@@ -45,16 +52,15 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  width: 100%; 
+  width: 100%;
   aspect-ratio: 1 / 1;
 }
 
 .top-buttons {
   font-size: 1.2em;
   font-weight: 400;
-  width: 25%;
+  margin: 0 2rem;
   aspect-ratio: 2 / 1;
-  margin: auto;
 }
 
 button:hover {
@@ -78,13 +84,11 @@ button:focus-visible {
     color: #4a4d89;
   }
 }
-@media (max-width: 600px) {
-  footer {
-      padding: 0.5em;
+@media (max-width: 480px) {
+  #displayOutput {
+    align-items: stretch;
   }
 }
-
-
 #displayOutput {
   flex-direction: column;
   align-items: center;
@@ -99,22 +103,28 @@ button:focus-visible {
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .button-table {
   display: grid;
-  grid-template-columns: repeat(4, 120px); /* 4 columns */
-  grid-gap: 2px; /* spacing between buttons */
+  height: 100%;
+  grid-template-rows: repeat(4, minmax(80px, 120px));
+  grid-gap: 2px;
   margin: 2px auto;
   justify-content: center;
 }
 
-.button-table .table-row {
-  display: contents;
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(80px, 120px));
+  grid-gap: 2px;
+  margin: 2px auto;
+  justify-content: center;
+  align-items: stretch;
 }
 
-.top{
+.top {
   display: flex;
 }
