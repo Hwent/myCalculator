@@ -45,21 +45,20 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.8em 1.6em;
+  padding: 1.6em;
   font-size: 1.6em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
   width: 100%;
-  aspect-ratio: 1 / 1;
 }
 
 .top-buttons {
   font-size: 1.2em;
   font-weight: 400;
   margin: 0 2rem;
+  padding: 0.5rem 1rem;
   aspect-ratio: 2 / 1;
 }
 
@@ -74,26 +73,25 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #1a1a1a;
-    background-color: #213547;
+    background-color: #4d93d0;
   }
   a:hover {
-    color: #4a4d89;
+    color: #dd7835;
   }
   button {
     background-color: #242424;
-    color: #4a4d89;
+    color: #4d93d0;
+  }
+  .read-the-docs {
+    color: #1a1a1a;
   }
 }
-@media (max-width: 480px) {
-  #displayOutput {
-    align-items: stretch;
-  }
-}
+
 #displayOutput {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 88%;
+  width: 100%;
   padding: 1.6em;
   text-align: center;
   font-size: large;
@@ -109,22 +107,26 @@ input::-webkit-inner-spin-button {
 
 .button-table {
   display: grid;
-  height: 100%;
-  grid-template-rows: repeat(4, minmax(80px, 120px));
-  grid-gap: 2px;
-  margin: 2px auto;
-  justify-content: center;
+  grid-template-columns:
+    minmax(1fr, 120px)
+    repeat(4, 120px);
+  gap: 2px;
 }
 
 .table-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(80px, 120px));
+  display: flex;
   grid-gap: 2px;
-  margin: 2px auto;
-  justify-content: center;
-  align-items: stretch;
 }
-
 .top {
   display: flex;
+  margin: 10px 0 5px 0;
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 10vw;
+  }
+  #displayOutput {
+    font-size: 1.8rem;
+  }
 }
