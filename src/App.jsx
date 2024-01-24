@@ -4,18 +4,31 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Result from './CalculatorLogic.jsx'
 
+//allowed keys: 0-9, +, -, *, /, ., =, clear, delete
+const allowedKeys =['0','1','2','3','4','5','6','7','8','9','+','-','*','/','.','=','Backspace','Delete','Enter']
+
+//Event listener for keyboard input
+window.addEventListener('keydown', (e) => {
+  if (allowedKeys.includes(e.key)) {
+      if (e.key === 'Enter') { document.getElementById('=').click(); return}
+      document.getElementById(e.key).click()
+    }
+})
+
 // MyClearButton component
 function MyTopBar({display,setDisplay}) {
   return (
     <div className='top'>
     <button
       className='top-buttons'
+      id='Delete'
       onClick={() => setDisplay('')}
     >
       Clear
     </button>
     <button
     className='top-buttons'
+    id='Backspace'
     onClick={() => setDisplay(display.slice(0,display.length-1))}
   ><i className="fa-solid fa-delete-left"></i>
   </button>
@@ -37,6 +50,7 @@ function MyButtonTable({display,setDisplay}) {
             children.push(
               <button 
                 key={j} 
+                id={buttons[i * 4 + j]}
                 onClick={() => setDisplay(prevDisplay => prevDisplay + buttons[i * 4 + j])}
               >
                 {buttons[i * 4 + j]}
